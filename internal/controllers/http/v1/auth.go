@@ -23,6 +23,17 @@ type SignIn struct {
 	Password string `json:"password" validate:"required"`
 }
 
+// Login godoc
+// @Summary Log in a user
+// @Description Log in a user with username and password
+// @Tags auth
+// @Accept  json
+// @Produce  json
+// @Param signIn body SignIn true "User credentials"
+// @Failure 400 {object} map[string]string
+// @Failure 401 {object} map[string]string
+// @Failure 500 {object} map[string]string
+// @Router /login [post]
 func (a *AuthController) Login(c echo.Context) error {
 	var signIn SignIn
 	if err := c.Bind(&signIn); err != nil {
