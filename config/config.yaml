@@ -1,0 +1,5 @@
+http:
+  port: 8070
+
+jwt:
+  token_ttl: 15m
